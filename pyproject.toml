@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vrp-vol-toolkit"
+version = "0.1.0"
+description = "Implied/realized volatility surface, estimators, and VRP signal core"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sebastian Cordoba" }]
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scipy>=1.9",
+    "tqdm>=4.64",
+    "matplotlib>=3.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["vrp*"]
