@@ -100,7 +100,7 @@ class BlackScholesModel(PricingModel):
 
     def theta(self, S: float, K: float, T: float, r: float, sigma: float,
               option_type: OptionType) -> float:
-        """Theta: ∂V/∂t (per year).  Negative for long options (time decay)."""
+        """Theta"""
         if T <= 0 or sigma <= 0 or S <= 0:
             return 0.0
         d1, d2 = self.d1d2(S, K, T, r, sigma)
@@ -112,7 +112,7 @@ class BlackScholesModel(PricingModel):
 
     def vega(self, S: float, K: float, T: float, r: float,
              sigma: float) -> float:
-        """Vega: ∂V/∂σ (per unit of σ).  Same for calls and puts."""
+        """Vega"""
         if T <= 0 or sigma <= 0 or S <= 0:
             return 0.0
         d1, _ = self.d1d2(S, K, T, r, sigma)
@@ -120,7 +120,7 @@ class BlackScholesModel(PricingModel):
 
     def vanna(self, S: float, K: float, T: float, r: float,
               sigma: float) -> float:
-        """Vanna: ∂²V/(∂S∂σ) = ∂Δ/∂σ.  Same for calls and puts."""
+        """Vanna"""
         if T <= 0 or sigma <= 0 or S <= 0:
             return 0.0
         d1, d2 = self.d1d2(S, K, T, r, sigma)
@@ -128,7 +128,7 @@ class BlackScholesModel(PricingModel):
 
     def volga(self, S: float, K: float, T: float, r: float,
               sigma: float) -> float:
-        """Volga (vomma): ∂²V/∂σ² = ∂vega/∂σ.  Same for calls and puts."""
+        """Volga (vomma)"""
         if T <= 0 or sigma <= 0 or S <= 0:
             return 0.0
         d1, d2 = self.d1d2(S, K, T, r, sigma)
